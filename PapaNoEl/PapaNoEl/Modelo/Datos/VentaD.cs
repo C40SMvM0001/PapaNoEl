@@ -36,6 +36,7 @@ namespace PapaNoEl.Modelo.Datos
             return EjectuarNonQuery(insertar);
         }
 
+
         public List<Venta> ObtenerTodo()
         {
             var tabla = EjecutarLectura(seleccionarTodo);

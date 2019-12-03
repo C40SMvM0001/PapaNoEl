@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PapaNoEl.Modelo.Entidades
 {
-    class Venta
+    public class Venta
     {
         public int idventa { get; set; }
         public DateTime fecha { get; set; }
