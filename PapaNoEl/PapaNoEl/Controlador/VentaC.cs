@@ -60,6 +60,15 @@ namespace PapaNoEl.Controlador
         //    }
         //}
 
+        public int ObtenerId() {
+            var id = _db.VerId().First();
+            if (id == null)
+                return 0;
+            else
+                return id.idventa + 1;
+        }
+
+
         public List<Venta> MostrarDatos()
         {
             return _db.ObtenerTodo().ToList();

@@ -8,10 +8,10 @@ namespace PapaNoEl.Modelo.Entidades
 {
     class Venta
     {
-        public string idventa { get; set; }
-        public string fecha { get; set; }
-        public string total { get; set; }
-        public string idcliente { get; set; }
+        public int idventa { get; set; }
+        public DateTime fecha { get; set; }
+        public decimal total { get; set; }
+        public int idcliente { get; set; }
         public string cuenta { get; set; }
     }
 }

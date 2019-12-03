@@ -9,19 +9,21 @@ using System.Data;
 
 namespace PapaNoEl.Modelo.Datos
 {
-    class VentaD:Query
+    public class VentaD:Query
     {
         private string seleccionarTodo;
         private string insertar;
-        //private string actualizar;
-        //private string eliminar;
+        private string actualizar;
+        private string eliminar;
+        private string obtenerId;
 
         public VentaD()
         {
             seleccionarTodo = "select * from Ventas";
             insertar = "insert into Ventas values(@fecha,@total,@idcliente,@cuenta)";
-            //actualizar = "update Ventas set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
-            //eliminar = "delete from Ventas where Ci=@ci";
+            actualizar = "update Ventas set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
+            eliminar = "delete from Ventas where Ci=@ci";
+            obtenerId = "select * from Ventas where IdVenta = (select max(IdVenta) from Ventas)";
         }
 
         public int Adicionar(Venta entidad)
@@ -34,23 +36,6 @@ namespace PapaNoEl.Modelo.Datos
             return EjectuarNonQuery(insertar);
         }
 
-        //public int Editar(Cliente entidad)
-        //{
-        //    parametros = new List<SqlParameter>();
-        //    parametros.Add(new SqlParameter("@nombre", entidad.nombre));
-        //    parametros.Add(new SqlParameter("@apellido", entidad.apellido));
-        //    parametros.Add(new SqlParameter("@ci", entidad.ci));
-        //    parametros.Add(new SqlParameter("@tipoempresa", entidad.tipoempresa));
-        //    return EjectuarNonQuery(actualizar);
-        //}
-
-        //public int Eliminar(string id)
-        //{
-        //    parametros = new List<SqlParameter>();
-        //    parametros.Add(new SqlParameter("@ci", id));
-        //    return EjectuarNonQuery(eliminar);
-        //}
-
         public List<Venta> ObtenerTodo()
         {
             var tabla = EjecutarLectura(seleccionarTodo);
@@ -59,14 +44,33 @@ namespace PapaNoEl.Modelo.Datos
             {
                 listaVenta.Add(new Venta
                 {
-                    idventa = item[0].ToString(),
-                    fecha = item[1].ToString(),
-                    total = item[2].ToString(),
-                    idcliente = item[3].ToString(),
+                    idventa = Convert.ToInt32(item[0]),
+                    fecha = Convert.ToDateTime(item[1].ToString()),
+                    total = Convert.ToDecimal(item[2].ToString()),
+                    idcliente = Convert.ToInt32(item[3].ToString()),
                     cuenta = item[4].ToString()
                 });
             }
             return listaVenta;
         }
+
+        public List<Venta> VerId()
+        {
+            var tabla = EjecutarLectura(obtenerId);
+            var listaVenta = new List<Venta>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaVenta.Add(new Venta
+                {
+                    idventa = Convert.ToInt32(item[0]),
+                    fecha = Convert.ToDateTime(item[1].ToString()),
+                    total = Convert.ToDecimal(item[2].ToString()),
+                    idcliente = Convert.ToInt32(item[3].ToString()),
+                    cuenta = item[4].ToString()
+                });
+            }
+            return listaVenta;
+        }
+
     }
 }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\ClienteC.cs" />
+    <Compile Include="Controlador\DetalleC.cs" />
     <Compile Include="Controlador\LoginCache.cs" />
     <Compile Include="Controlador\ProductoC.cs" />
     <Compile Include="Controlador\UsuarioC.cs" />
@@ -59,11 +60,13 @@
     </Compile>
     <Compile Include="Modelo\Datos\ClienteD.cs" />
     <Compile Include="Modelo\Datos\Conexion.cs" />
+    <Compile Include="Modelo\Datos\DetalleD.cs" />
     <Compile Include="Modelo\Datos\ProductoD.cs" />
     <Compile Include="Modelo\Datos\Query.cs" />
     <Compile Include="Modelo\Datos\UsuarioD.cs" />
     <Compile Include="Modelo\Datos\VentaD.cs" />
     <Compile Include="Modelo\Entidades\Cliente.cs" />
+    <Compile Include="Modelo\Entidades\Detalle.cs" />
     <Compile Include="Modelo\Entidades\Producto.cs" />
     <Compile Include="Modelo\Entidades\Usuario.cs" />
     <Compile Include="Modelo\Entidades\Venta.cs" />

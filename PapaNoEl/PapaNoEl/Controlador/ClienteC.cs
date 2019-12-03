@@ -70,5 +70,11 @@ namespace PapaNoEl.Controlador
             //return _db.Usuarios.Where(x => x.NOMBRE.Contains(id)).ToList();
             return _db.ObtenerTodo(id).ToList();
         }
+
+        public int VerId()
+        {
+            var reg = _db.VerId().First();
+            return Convert.ToInt32(reg.idcliente);
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace PapaNoEl.Modelo.Datos
         private string actualizar;
         private string eliminar;
         private string seleccionarTodoFiltro;
+        private string verId;
 
         public ClienteD()
         {
@@ -24,6 +25,7 @@ namespace PapaNoEl.Modelo.Datos
             actualizar = "update Clientes set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
             eliminar = "delete from Clientes where Ci=@ci";
             seleccionarTodoFiltro = "select * from Clientes where Ci like @clave +'%' ";
+            verId = "select * from Clientes where IdCliente = (select max(IdCliente) from Clientes)";
         }
 
         public int Adicionar(Cliente entidad)
@@ -90,5 +92,25 @@ namespace PapaNoEl.Modelo.Datos
             }
             return listaCliente;
         }
+
+        public List<Cliente> VerId()
+        {
+
+            var tabla = EjecutarLecturaParametros(verId);
+            var listaVenta = new List<Cliente>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaVenta.Add(new Cliente
+                {
+                    idcliente = item[0].ToString(),
+                    nombre = item[1].ToString(),
+                    apellido = item[2].ToString(),
+                    ci = item[3].ToString(),
+                    tipoempresa = item[4].ToString(),
+                });
+            }
+            return listaVenta;
+        }
+
     }
 }

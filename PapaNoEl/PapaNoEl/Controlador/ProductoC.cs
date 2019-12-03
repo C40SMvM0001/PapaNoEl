@@ -70,5 +70,18 @@ namespace PapaNoEl.Controlador
             //return _db.Usuarios.Where(x => x.NOMBRE.Contains(id)).ToList();
             return _db.ObtenerTodo(id).ToList();
         }
+
+        public decimal VerPrecio(int id)
+        {
+            var reg = _db.VerPrecio(id).First();
+            return reg.precio;
+        }
+
+        public int VerStock(int id)
+        {
+            var reg = _db.VerPrecio(id).First();
+            return reg.stock;
+        }
+
     }
 }

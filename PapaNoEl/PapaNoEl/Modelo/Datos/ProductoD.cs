@@ -16,6 +16,7 @@ namespace PapaNoEl.Modelo.Datos
         private string actualizar;
         private string eliminar;
         private string seleccionarTodoFiltro;
+        private string verPrecio;
         public ProductoD()
         {
             seleccionarTodo = "select * from Productos";
@@ -23,6 +24,8 @@ namespace PapaNoEl.Modelo.Datos
             actualizar = "update Productos set Descripcion=@descripcion,Tipo=@tipo,Precio=@precio,Stock=@stock where IdProducto=@idproducto";
             eliminar = "delete from Productos where IdProducto=@idproducto";
             seleccionarTodoFiltro = "select * from Productos where Precio like @clave +'%' ";
+            verPrecio = "select * from Productos where IdProducto = @id;";
+
         }
 
         public int Adicionar(Producto entidad)
@@ -89,6 +92,27 @@ namespace PapaNoEl.Modelo.Datos
                 });
             }
             return listaProducto;
+        }
+
+        public List<Producto> VerPrecio(int id)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id", id));
+
+            var tabla = EjecutarLecturaParametros(verPrecio);
+            var listaVenta = new List<Producto>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaVenta.Add(new Producto
+                {
+                    idProducto = Convert.ToInt32(item[0]),
+                    descripcion = item[1].ToString(),
+                    tipo = item[2].ToString(),
+                    precio = Convert.ToDecimal(item[3]),
+                    stock = Convert.ToInt32(item[4])
+                });
+            }
+            return listaVenta;
         }
     }
 }
