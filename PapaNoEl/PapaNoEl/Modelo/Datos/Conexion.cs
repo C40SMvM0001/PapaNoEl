@@ -15,6 +15,7 @@ namespace PapaNoEl.Modelo.Datos
         public Conexion()
         {
             conexionn = ConfigurationManager.ConnectionStrings["conexion"].ToString();
+            //ss
         }
 
         protected SqlConnection ObtenerConexion()
