@@ -80,7 +80,7 @@ namespace PapaNoEl.Modelo.Datos
             parametros.Add(new SqlParameter("@cuenta", cuenta));
             parametros.Add(new SqlParameter("@clave", clave));
 
-            var tabla = EjecutarLectura(buscarCuenta);
+            var tabla = EjecutarLecturaParametros(buscarCuenta);
             var listaUsuarios = new Usuario();
             
             listaUsuarios.cuenta = tabla.Rows[0].ToString();

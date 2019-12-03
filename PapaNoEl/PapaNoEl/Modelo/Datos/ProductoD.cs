@@ -60,11 +60,11 @@ namespace PapaNoEl.Modelo.Datos
             {
                 listaProducto.Add(new Producto
                 {
-                    idProducto = item[0].ToString(),
+                    idProducto = Convert.ToInt32(item[0]),
                     descripcion = item[1].ToString(),
                     tipo = item[2].ToString(),
-                    precio = item[3].ToString(),
-                    stock = item[4].ToString()
+                    precio = Convert.ToDecimal(item[3]),
+                    stock = Convert.ToInt32(item[4])
                 });
             }
             return listaProducto;

@@ -53,5 +53,35 @@ namespace PapaNoEl.Modelo.Datos
                 }
             }
         }
+
+        protected DataTable EjecutarLecturaParametros(string comandoSql)
+        {
+            using (var conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                using (var comando = new SqlCommand())
+                {
+                    comando.Connection = conexion;
+                    comando.CommandText = comandoSql;
+                    comando.CommandType = CommandType.Text;
+                    foreach (SqlParameter item in parametros)
+                    {
+                        comando.Parameters.Add(item);
+                    }
+                    SqlDataReader reader = comando.ExecuteReader();
+                    int resultado = comando.ExecuteNonQuery();                    
+                    
+                    parametros.Clear();
+
+                    using (var tabla = new DataTable())
+                    {
+                        tabla.Load(reader);
+                        reader.Dispose();
+                        return tabla;
+                    }
+                    
+                }
+            }
+        }
     }
 }
