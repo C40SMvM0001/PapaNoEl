@@ -18,10 +18,10 @@ namespace PapaNoEl.Modelo.Datos
 
         public ClienteD()
         {
-            seleccionarTodo = "select * from Cliente";
-            insertar = "insert into Cliente values(@nombre,@apellido,@ci,@tipoempresa)";
-            actualizar = "update Cliente set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
-            eliminar = "delete from Cliente where Ci=@ci";
+            seleccionarTodo = "select * from Clientes";
+            insertar = "insert into Clientes values(@nombre,@apellido,@ci,@tipoempresa)";
+            actualizar = "update Clientes set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
+            eliminar = "delete from Clientes where Ci=@ci";
         }
 
         public int Adicionar(Cliente entidad)
@@ -29,7 +29,7 @@ namespace PapaNoEl.Modelo.Datos
             parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@nombre", entidad.nombre));
             parametros.Add(new SqlParameter("@apellido", entidad.apellido));
-            parametros.Add(new SqlParameter("@ci", entidad.));
+            parametros.Add(new SqlParameter("@ci", entidad.ci));
             parametros.Add(new SqlParameter("@tipoempresa", entidad.tipoempresa));
             return EjectuarNonQuery(insertar);
         }
@@ -39,7 +39,7 @@ namespace PapaNoEl.Modelo.Datos
             parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@nombre", entidad.nombre));
             parametros.Add(new SqlParameter("@apellido", entidad.apellido));
-            parametros.Add(new SqlParameter("@ci", entidad.));
+            parametros.Add(new SqlParameter("@ci", entidad.ci));
             parametros.Add(new SqlParameter("@tipoempresa", entidad.tipoempresa));
             return EjectuarNonQuery(actualizar);
         }

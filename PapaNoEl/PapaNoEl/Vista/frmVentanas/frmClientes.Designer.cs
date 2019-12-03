@@ -57,6 +57,7 @@
             // 
             this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -82,6 +83,9 @@
             // cmbTipoEmpresa
             // 
             this.cmbTipoEmpresa.FormattingEnabled = true;
+            this.cmbTipoEmpresa.Items.AddRange(new object[] {
+            "Privada",
+            "Publica"});
             this.cmbTipoEmpresa.Location = new System.Drawing.Point(368, 151);
             this.cmbTipoEmpresa.Name = "cmbTipoEmpresa";
             this.cmbTipoEmpresa.Size = new System.Drawing.Size(129, 21);
@@ -184,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmClientes";
             this.Text = "frmClientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnBuscar, 0);
             this.Controls.SetChildIndex(this.txtBuscar, 0);
