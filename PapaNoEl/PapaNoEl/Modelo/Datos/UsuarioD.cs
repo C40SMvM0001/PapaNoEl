@@ -1,0 +1,75 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
+using PapaNoEl.Modelo.Entidades;
+using System.Data;
+
+namespace PapaNoEl.Modelo.Datos
+{
+    public class UsuarioD:Query
+    {
+        private string seleccionarTodo;
+        private string insertar;
+        private string actualizar;
+        private string eliminar;
+
+        public UsuarioD()
+        {
+            seleccionarTodo = "select * from Usuarios";
+            insertar = "insert into Usuarios values(@cuenta,@clave,@nombre,@apellido,@rol)";
+            actualizar = "update Usuarios set Cuenta=@cuenta,Clave=@clave,Nombre=@nombre,Apellido=@apellido,Rol=@rol where Cuenta=@cuenta";
+            eliminar = "delete from Usuarios where Cuenta=@cuenta";
+        }
+
+        public int Adicionar(Usuario entidad)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@cuenta", entidad.cuenta));
+            parametros.Add(new SqlParameter("@clave", entidad.clave));
+            parametros.Add(new SqlParameter("@nombre", entidad.nombre));
+            parametros.Add(new SqlParameter("@apellido", entidad.apellido));            
+            parametros.Add(new SqlParameter("@rol", entidad.rol));
+            return EjectuarNonQuery(insertar);
+        }
+
+        public int Editar(Usuario entidad)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@cuenta", entidad.cuenta));
+            parametros.Add(new SqlParameter("@clave", entidad.clave));            
+            parametros.Add(new SqlParameter("@nombre", entidad.nombre));
+            parametros.Add(new SqlParameter("@apellido", entidad.apellido));            
+            parametros.Add(new SqlParameter("@tipoUsuario", entidad.rol));
+            return EjectuarNonQuery(actualizar);
+        }
+
+        public int Eliminar(string id)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@cuenta", id));
+            return EjectuarNonQuery(eliminar);
+        }
+
+        public IEnumerable<Usuario> ObtenerTodo()
+        {
+            var tabla = EjecutarLectura(seleccionarTodo);
+            var listaUsuarios = new List<Usuario>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaUsuarios.Add(new Usuario
+                {
+                    cuenta = item[0].ToString(),
+                    clave = item[1].ToString(),
+                    nombre = item[2].ToString(),
+                    apellido = item[3].ToString(),                                        
+                    rol = item[4].ToString()
+                });
+            }
+            return listaUsuarios;
+        }
+    }
+}
