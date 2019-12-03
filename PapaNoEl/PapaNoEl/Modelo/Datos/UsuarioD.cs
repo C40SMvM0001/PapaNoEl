@@ -97,21 +97,25 @@ namespace PapaNoEl.Modelo.Datos
             return listaUsuarios;
         }
 
-        public Usuario ObtenerCuenta(string cuenta,string clave)
+        public List<Usuario> ObtenerCuenta(string cuenta,string clave)
         {
             parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@cuenta", cuenta));
             parametros.Add(new SqlParameter("@clave", clave));
 
             var tabla = EjecutarLecturaParametros(buscarCuenta);
-            var listaUsuarios = new Usuario();
-            
-            listaUsuarios.cuenta = tabla.Rows[0].ToString();
-            listaUsuarios.clave = tabla.Rows[1].ToString();
-            listaUsuarios.nombre = tabla.Rows[2].ToString();
-            listaUsuarios.apellido = tabla.Rows[3].ToString();
-            listaUsuarios.rol = tabla.Rows[4].ToString();
-            
+            var listaUsuarios = new List<Usuario>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaUsuarios.Add(new Usuario
+                {
+                    cuenta = item[0].ToString(),
+                    clave = item[1].ToString(),
+                    nombre = item[2].ToString(),
+                    apellido = item[3].ToString(),
+                    rol = item[4].ToString()
+                });
+            }
             return listaUsuarios;
         }
     }

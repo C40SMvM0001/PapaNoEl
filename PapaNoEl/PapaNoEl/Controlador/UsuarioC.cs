@@ -80,7 +80,7 @@ namespace PapaNoEl.Controlador
             {
                 // UsuarioDTO usuariodto = new UsuarioDTO();
 
-                var res = _db.ObtenerCuenta(cuenta, clave);
+                var res = _db.ObtenerCuenta(cuenta, clave).First();
                 if (res != null)
                 {
                     LoginCache.cuenta = res.cuenta;
