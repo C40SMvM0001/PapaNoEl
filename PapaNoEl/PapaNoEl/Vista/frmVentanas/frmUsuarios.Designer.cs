@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCuenta = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.dgvUsuario = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -76,19 +78,19 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "CUENTA";
             // 
-            // textBox1
+            // txtCuenta
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtCuenta.Location = new System.Drawing.Point(165, 82);
+            this.txtCuenta.Name = "txtCuenta";
+            this.txtCuenta.Size = new System.Drawing.Size(118, 20);
+            this.txtCuenta.TabIndex = 16;
             // 
-            // textBox2
+            // txtClave
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 18;
+            this.txtClave.Location = new System.Drawing.Point(165, 113);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(118, 20);
+            this.txtClave.TabIndex = 18;
             // 
             // label3
             // 
@@ -100,12 +102,12 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "CLAVE";
             // 
-            // textBox3
+            // txtNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(368, 82);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(129, 20);
-            this.textBox3.TabIndex = 20;
+            this.txtNombre.Location = new System.Drawing.Point(368, 82);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(129, 20);
+            this.txtNombre.TabIndex = 20;
             // 
             // label4
             // 
@@ -117,12 +119,12 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "NOMBRE";
             // 
-            // textBox4
+            // txtApellido
             // 
-            this.textBox4.Location = new System.Drawing.Point(368, 117);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(129, 20);
-            this.textBox4.TabIndex = 22;
+            this.txtApellido.Location = new System.Drawing.Point(368, 117);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(129, 20);
+            this.txtApellido.TabIndex = 22;
             // 
             // label5
             // 
@@ -144,28 +146,40 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "ROL";
             // 
-            // comboBox1
+            // cmbRol
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(368, 151);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(129, 21);
-            this.comboBox1.TabIndex = 24;
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Location = new System.Drawing.Point(368, 151);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(129, 21);
+            this.cmbRol.TabIndex = 24;
+            // 
+            // dgvUsuario
+            // 
+            this.dgvUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuario.Location = new System.Drawing.Point(12, 233);
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.Size = new System.Drawing.Size(749, 272);
+            this.dgvUsuario.TabIndex = 25;
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 517);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvUsuario);
+            this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtClave);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCuenta);
             this.Controls.Add(this.label1);
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
@@ -175,15 +189,17 @@
             this.Controls.SetChildIndex(this.txtBuscar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.txtCuenta, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
+            this.Controls.SetChildIndex(this.txtClave, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
+            this.Controls.SetChildIndex(this.txtNombre, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.textBox4, 0);
+            this.Controls.SetChildIndex(this.txtApellido, 0);
             this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.cmbRol, 0);
+            this.Controls.SetChildIndex(this.dgvUsuario, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,14 +208,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCuenta;
+        private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbRol;
+        private System.Windows.Forms.DataGridView dgvUsuario;
     }
 }
