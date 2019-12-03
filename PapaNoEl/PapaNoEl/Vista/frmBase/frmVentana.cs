@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PapaNoEl
+namespace PapaNoEl.Vista.frmBase
 {
-    public partial class Form1 : Form
+    public partial class frmVentana : Form
     {
-        public Form1()
+        public frmVentana()
         {
             InitializeComponent();
         }
