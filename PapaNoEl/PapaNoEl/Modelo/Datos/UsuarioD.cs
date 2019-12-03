@@ -54,7 +54,7 @@ namespace PapaNoEl.Modelo.Datos
             return EjectuarNonQuery(eliminar);
         }
 
-        public IEnumerable<Usuario> ObtenerTodo()
+        public List<Usuario> ObtenerTodo()
         {
             var tabla = EjecutarLectura(seleccionarTodo);
             var listaUsuarios = new List<Usuario>();

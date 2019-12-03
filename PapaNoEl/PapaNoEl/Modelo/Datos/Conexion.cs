@@ -11,15 +11,15 @@ namespace PapaNoEl.Modelo.Datos
 {
     public class Conexion
     {
-        private readonly string conexion;
+        private readonly string conexionn;
         public Conexion()
         {
-            conexion = ConfigurationManager.ConnectionStrings["connbddPapaNoEl"].ToString();
+            conexionn = ConfigurationManager.ConnectionStrings["conexion"].ToString();
         }
 
         protected SqlConnection ObtenerConexion()
         {
-            return new SqlConnection(conexion);
+            return new SqlConnection(conexionn);
         }
     }
 }
