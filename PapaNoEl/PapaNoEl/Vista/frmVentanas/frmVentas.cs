@@ -125,17 +125,8 @@ namespace PapaNoEl.Vista.frmVentanas
                     subtotal = Convert.ToDecimal(row.Cells[4].Value.ToString()),
                     idVenta = Convert.ToInt32(lblVenta.Text)
                 };
-                //bool c;
-                _detalleC.GuardarCambios(detalle);
-                ///////////////////////////////////////////////////////////////
-                int stock = Convert.ToInt32(_productoC.VerStock(detalle.idProducto));
-
-                /*Producto producto = new Producto();
-
-                producto.IDPRODUCTO = detalle.IDPRODUCTO;
-                producto.STOCK = stock - detalle.CANTIDAD;
-
-                _metodosProducto.ModificarStock(producto);*/
+                
+                _detalleC.GuardarCambios(detalle);                
             }
         }
     }

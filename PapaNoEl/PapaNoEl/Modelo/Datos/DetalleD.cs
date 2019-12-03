@@ -21,7 +21,7 @@ namespace PapaNoEl.Modelo.Datos
         public DetalleD()
         {
             //seleccionarTodo = "select * from Ventas";
-            insertar = "insert into Detalle values(@cantidad,@subtotal,@idProducto,@idVenta)";
+            insertar = "insert into Detalles values(@cantidad,@subtotal,@idProducto,@idVenta)";
             //actualizar = "update Ventas set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
             //eliminar = "delete from Ventas where Ci=@ci";
             //obtenerId = "select * from Ventas where IdVenta = (select max(IdVenta) from Ventas)";
@@ -46,7 +46,7 @@ namespace PapaNoEl.Modelo.Datos
             {
                 listaVenta.Add(new Detalle
                 {
-                    cantidad = Convert.ToDecimal(item[0]),
+                    cantidad = Convert.ToDecimal(item[0].ToString()),
                     subtotal = Convert.ToDecimal(item[1].ToString()),
                     idProducto = Convert.ToInt32(item[2].ToString()),
                     idVenta = Convert.ToInt32(item[3].ToString())
