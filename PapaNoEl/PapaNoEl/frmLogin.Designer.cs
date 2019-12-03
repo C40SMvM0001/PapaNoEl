@@ -70,6 +70,8 @@
             this.txtContrasenia.TabIndex = 24;
             this.txtContrasenia.Text = "Contraseña";
             this.txtContrasenia.UseSystemPasswordChar = true;
+            this.txtContrasenia.Enter += new System.EventHandler(this.TxtContrasenia_Enter);
+            this.txtContrasenia.Leave += new System.EventHandler(this.TxtContrasenia_Leave);
             // 
             // panel5
             // 
@@ -111,6 +113,8 @@
             this.txtUsuario.Size = new System.Drawing.Size(152, 32);
             this.txtUsuario.TabIndex = 20;
             this.txtUsuario.Text = "Usuario";
+            this.txtUsuario.Enter += new System.EventHandler(this.TxtUsuario_Enter);
+            this.txtUsuario.Leave += new System.EventHandler(this.TxtUsuario_Leave);
             // 
             // brnCancelar
             // 
@@ -128,6 +132,7 @@
             this.brnCancelar.TabIndex = 19;
             this.brnCancelar.Text = "Cancelar";
             this.brnCancelar.UseVisualStyleBackColor = false;
+            this.brnCancelar.Click += new System.EventHandler(this.BrnCancelar_Click);
             // 
             // btnIngresar
             // 
