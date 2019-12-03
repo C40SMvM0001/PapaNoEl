@@ -22,7 +22,7 @@ namespace PapaNoEl.Controlador
                 tblUsuario.nombre = nuevoUsuario.nombre;
                 tblUsuario.apellido = nuevoUsuario.apellido;
                 tblUsuario.rol = nuevoUsuario.rol;
-                
+
                 return _db.Adicionar(tblUsuario) > 0;
             }
             catch
@@ -42,7 +42,7 @@ namespace PapaNoEl.Controlador
                 tblUsuario.nombre = nuevoUsuario.nombre;
                 tblUsuario.apellido = nuevoUsuario.apellido;
                 tblUsuario.rol = nuevoUsuario.rol;
-                                
+
                 return _db.Editar(tblUsuario) > 0;
             }
             catch
@@ -54,7 +54,7 @@ namespace PapaNoEl.Controlador
         public bool Eliminar(string id)
         {
             try
-            {                
+            {
                 return _db.Eliminar(id) > 0;
             }
             catch
@@ -64,14 +64,43 @@ namespace PapaNoEl.Controlador
         }
 
         public List<Usuario> MostrarDatos()
-        {            
+        {
             return _db.ObtenerTodo().ToList();
         }
 
-        /*public List<Usuarios> MostrarDatos(string id)
+        /*public List<Usuario> MostrarDatos(string id)
         {
-            return _db.Usuarios.Where(x => x.NOMBRE.Contains(id)).ToList();
+            //return _db.Usuarios.Where(x => x.NOMBRE.Contains(id)).ToList();
+             return _db.Obtener(id).ToList();
         }*/
 
+        public int Login(string cuenta, string clave)
+        {
+            try
+            {
+                // UsuarioDTO usuariodto = new UsuarioDTO();
+
+                var res = _db.ObtenerCuenta(cuenta, clave);
+                if (res != null)
+                {
+                    LoginCache.cuenta = res.cuenta;
+                    LoginCache.clave = res.clave;
+                    LoginCache.nombre = res.nombre;
+                    LoginCache.apellido = res.apellido;
+                    LoginCache.rol = res.rol;
+
+                    if (res.rol.Contains("Gerente"))
+                        return 1;
+                    else
+                        return 0;
+                }
+                return -1;
+            }
+            catch(Exception e)
+            {
+                return -1;
+            }
+
+        }
     }
 }

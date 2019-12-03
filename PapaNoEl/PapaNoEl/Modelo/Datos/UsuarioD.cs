@@ -16,6 +16,7 @@ namespace PapaNoEl.Modelo.Datos
         private string insertar;
         private string actualizar;
         private string eliminar;
+        private string buscarCuenta;
 
         public UsuarioD()
         {
@@ -23,6 +24,7 @@ namespace PapaNoEl.Modelo.Datos
             insertar = "insert into Usuarios values(@cuenta,@clave,@nombre,@apellido,@rol)";
             actualizar = "update Usuarios set Cuenta=@cuenta,Clave=@clave,Nombre=@nombre,Apellido=@apellido,Rol=@rol where Cuenta=@cuenta";
             eliminar = "delete from Usuarios where Cuenta=@cuenta";
+            buscarCuenta = "select * from Usuarios where Cuenta=@cuenta and Clave=@clave";
         }
 
         public int Adicionar(Usuario entidad)
@@ -69,6 +71,24 @@ namespace PapaNoEl.Modelo.Datos
                     rol = item[4].ToString()
                 });
             }
+            return listaUsuarios;
+        }
+
+        public Usuario ObtenerCuenta(string cuenta,string clave)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@cuenta", cuenta));
+            parametros.Add(new SqlParameter("@clave", clave));
+
+            var tabla = EjecutarLectura(buscarCuenta);
+            var listaUsuarios = new Usuario();
+            
+            listaUsuarios.cuenta = tabla.Rows[0].ToString();
+            listaUsuarios.clave = tabla.Rows[1].ToString();
+            listaUsuarios.nombre = tabla.Rows[2].ToString();
+            listaUsuarios.apellido = tabla.Rows[3].ToString();
+            listaUsuarios.rol = tabla.Rows[4].ToString();
+            
             return listaUsuarios;
         }
     }
