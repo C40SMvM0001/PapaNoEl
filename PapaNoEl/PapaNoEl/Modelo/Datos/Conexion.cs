@@ -15,7 +15,7 @@ namespace PapaNoEl.Modelo.Datos
         public Conexion()
         {
             //conexionn = ConfigurationManager.ConnectionStrings["conexion"].ToString();
-            conexionn = "Data Source=DESKTOP-3QFFCGT\\STELLA;Initial Catalog=dbPapaNoel;Integrated Security=True";
+            conexionn = "Data Source=.;Initial Catalog=dbPapaNoel;Integrated Security=True";
             //ss
         }
 

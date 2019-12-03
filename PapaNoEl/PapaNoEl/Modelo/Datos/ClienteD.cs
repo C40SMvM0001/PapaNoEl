@@ -9,12 +9,13 @@ using System.Data;
 
 namespace PapaNoEl.Modelo.Datos
 {
-    class ClienteD:Query
+    public class ClienteD:Query
     {
         private string seleccionarTodo;
         private string insertar;
         private string actualizar;
         private string eliminar;
+        private string seleccionarTodoFiltro;
 
         public ClienteD()
         {
@@ -22,6 +23,7 @@ namespace PapaNoEl.Modelo.Datos
             insertar = "insert into Clientes values(@nombre,@apellido,@ci,@tipoempresa)";
             actualizar = "update Clientes set Nombre=@nombre,Apellido=@apellido,Ci=@ci,TipoEmpresa=@tipoempresa where Ci=@ci";
             eliminar = "delete from Clientes where Ci=@ci";
+            seleccionarTodoFiltro = "select * from Clientes where Ci like @clave +'%' ";
         }
 
         public int Adicionar(Cliente entidad)
@@ -51,22 +53,42 @@ namespace PapaNoEl.Modelo.Datos
             return EjectuarNonQuery(eliminar);
         }
 
-        public List<Usuario> ObtenerTodo()
+        public List<Cliente> ObtenerTodo()
         {
             var tabla = EjecutarLectura(seleccionarTodo);
-            var listaUsuarios = new List<Usuario>();
+            var listaCliente = new List<Cliente>();
             foreach (DataRow item in tabla.Rows)
             {
-                listaUsuarios.Add(new Usuario
+                listaCliente.Add(new Cliente
                 {
-                    cuenta = item[0].ToString(),
-                    clave = item[1].ToString(),
-                    nombre = item[2].ToString(),
-                    apellido = item[3].ToString(),
-                    rol = item[4].ToString()
+                    idcliente= item[0].ToString(),
+                    nombre = item[1].ToString(),
+                    apellido = item[2].ToString(),
+                    ci = item[3].ToString(),
+                    tipoempresa = item[4].ToString(),
                 });
             }
-            return listaUsuarios;
+            return listaCliente;
+        }
+        public List<Cliente> ObtenerTodo(string clave)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@clave", clave));
+
+            var tabla = EjecutarLecturaParametros(seleccionarTodoFiltro);
+            var listaCliente = new List<Cliente>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaCliente.Add(new Cliente
+                {
+                    idcliente = item[0].ToString(),
+                    nombre = item[1].ToString(),
+                    apellido = item[2].ToString(),
+                    ci = item[3].ToString(),
+                    tipoempresa = item[4].ToString(),
+                });
+            }
+            return listaCliente;
         }
     }
 }
