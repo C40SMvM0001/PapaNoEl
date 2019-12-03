@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlador\LoginCache.cs" />
+    <Compile Include="Controlador\ClienteC.cs" />
     <Compile Include="Controlador\UsuarioC.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -54,11 +54,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Datos\ClienteD.cs" />
     <Compile Include="Modelo\Datos\Conexion.cs" />
     <Compile Include="Modelo\Datos\Query.cs" />
     <Compile Include="Modelo\Datos\UsuarioD.cs" />
     <Compile Include="Modelo\Entidades\Cliente.cs" />
-    <Compile Include="Modelo\Entidades\Producto.cs" />
     <Compile Include="Modelo\Entidades\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,7 +155,6 @@
     <EmbeddedResource Include="Vista\frmVentanas\frnReportes.resx">
       <DependentUpon>frnReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,6 +164,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
