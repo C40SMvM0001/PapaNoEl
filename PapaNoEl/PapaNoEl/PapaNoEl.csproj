@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controlador\ClienteC.cs" />
     <Compile Include="Controlador\LoginCache.cs" />
+    <Compile Include="Controlador\ProductoC.cs" />
     <Compile Include="Controlador\UsuarioC.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -57,9 +58,11 @@
     </Compile>
     <Compile Include="Modelo\Datos\ClienteD.cs" />
     <Compile Include="Modelo\Datos\Conexion.cs" />
+    <Compile Include="Modelo\Datos\ProductoD.cs" />
     <Compile Include="Modelo\Datos\Query.cs" />
     <Compile Include="Modelo\Datos\UsuarioD.cs" />
     <Compile Include="Modelo\Entidades\Cliente.cs" />
+    <Compile Include="Modelo\Entidades\Producto.cs" />
     <Compile Include="Modelo\Entidades\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
