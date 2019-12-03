@@ -56,6 +56,8 @@
     <Compile Include="Modelo\Datos\Conexion.cs" />
     <Compile Include="Modelo\Datos\Query.cs" />
     <Compile Include="Modelo\Datos\UsuarioD.cs" />
+    <Compile Include="Modelo\Entidades\Cliente.cs" />
+    <Compile Include="Modelo\Entidades\Producto.cs" />
     <Compile Include="Modelo\Entidades\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
