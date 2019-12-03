@@ -125,7 +125,7 @@ namespace PapaNoEl.Vista.frmVentanas
                     subtotal = Convert.ToDecimal(row.Cells[4].Value.ToString()),
                     idVenta = Convert.ToInt32(lblVenta.Text)
                 };
-                
+                //
                 _detalleC.GuardarCambios(detalle);                
             }
         }
