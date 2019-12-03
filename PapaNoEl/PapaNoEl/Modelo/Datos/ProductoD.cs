@@ -9,19 +9,20 @@ using System.Data.SqlClient;
 
 namespace PapaNoEl.Modelo.Datos
 {
-    class ProductoD:Query
+    public class ProductoD:Query
     {
         private string seleccionarTodo;
         private string insertar;
         private string actualizar;
         private string eliminar;
-
+        private string seleccionarTodoFiltro;
         public ProductoD()
         {
             seleccionarTodo = "select * from Productos";
             insertar = "insert into Productos values(@descripcion,@tipo,@precio,@stock)";
             actualizar = "update Productos set Descripcion=@descripcion,Tipo=@tipo,Precio=@precio,Stock=@stock where IdProducto=@idproducto";
             eliminar = "delete from Productos where IdProducto=@idproducto";
+            seleccionarTodoFiltro = "select * from Productos where Precio like @clave +'%' ";
         }
 
         public int Adicionar(Producto entidad)
@@ -55,6 +56,26 @@ namespace PapaNoEl.Modelo.Datos
         public List<Producto> ObtenerTodo()
         {
             var tabla = EjecutarLectura(seleccionarTodo);
+            var listaProducto = new List<Producto>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaProducto.Add(new Producto
+                {
+                    idProducto = Convert.ToInt32(item[0]),
+                    descripcion = item[1].ToString(),
+                    tipo = item[2].ToString(),
+                    precio = Convert.ToDecimal(item[3]),
+                    stock = Convert.ToInt32(item[4])
+                });
+            }
+            return listaProducto;
+        }
+        public List<Producto> ObtenerTodo(string clave)
+        {
+            parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@clave", clave));
+
+            var tabla = EjecutarLecturaParametros(seleccionarTodoFiltro);
             var listaProducto = new List<Producto>();
             foreach (DataRow item in tabla.Rows)
             {

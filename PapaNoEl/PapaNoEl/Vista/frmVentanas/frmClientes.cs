@@ -16,6 +16,7 @@ namespace PapaNoEl.Vista.frmVentanas
     public partial class frmClientes : frmGestionar
     {
         ClienteC _ClienteC = new ClienteC();
+        Cliente _Cliente = new Cliente();
         public frmClientes()
         {
             InitializeComponent();
@@ -23,13 +24,34 @@ namespace PapaNoEl.Vista.frmVentanas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Modelo.Entidades.Cliente Cl = new Modelo.Entidades.Cliente();
-            Modelo.Datos.ClienteD Cli = new Modelo.Datos.ClienteD();
-            Cl.nombre = txtNombre.Text;
-            Cl.apellido = txtApellido.Text;
-            Cl.ci = txtCedula.Text;
-            Cl.tipoempresa = cmbTipoEmpresa.SelectedItem.ToString();
-            Cli.Adicionar(Cl);
+            if (txtNombre.Text != "" &&
+                txtApellido.Text != "" &&
+                txtCedula.Text != "" &&
+                cmbTipoEmpresa.SelectedItem.ToString() != "")
+            {
+                Guardar();
+                MessageBox.Show("Guardado");
+                Close();
+            }
+            else
+                MessageBox.Show("Faltan datos");
+
+
+            //Modelo.Entidades.Cliente Cl = new Modelo.Entidades.Cliente();
+            //Modelo.Datos.ClienteD Cli = new Modelo.Datos.ClienteD();
+            //Cl.nombre = txtNombre.Text;
+            //Cl.apellido = txtApellido.Text;
+            //Cl.ci = txtCedula.Text;
+            //Cl.tipoempresa = cmbTipoEmpresa.SelectedItem.ToString();
+            //Cli.Adicionar(Cl);
+        }
+        public void Guardar()
+        {
+            _Cliente.nombre = txtNombre.Text;
+            _Cliente.apellido = txtApellido.Text;
+            _Cliente.ci = txtCedula.Text;
+            _Cliente.tipoempresa = cmbTipoEmpresa.SelectedItem.ToString();
+            _ClienteC.GuardarCambios(_Cliente);
         }
 
         private void frmClientes_Load(object sender, EventArgs e)

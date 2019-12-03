@@ -84,6 +84,9 @@
             // cmbTipo
             // 
             this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Tarjeta Digital",
+            "Tarjeta Fisica"});
             this.cmbTipo.Location = new System.Drawing.Point(368, 85);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(129, 21);
@@ -187,6 +190,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmProductos";
             this.Text = "frmProductos";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnBuscar, 0);
             this.Controls.SetChildIndex(this.txtBuscar, 0);

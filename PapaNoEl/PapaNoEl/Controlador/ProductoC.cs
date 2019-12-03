@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PapaNoEl.Controlador
 {
-    class ProductoC
+    public class ProductoC
     {
         ProductoD _db = new ProductoD();
         public bool GuardarCambios(Producto nuevoProducto)
@@ -63,6 +63,12 @@ namespace PapaNoEl.Controlador
         public List<Producto> MostrarDatos()
         {
             return _db.ObtenerTodo().ToList();
+        }
+
+        public List<Producto> MostrarDatos(string id)
+        {
+            //return _db.Usuarios.Where(x => x.NOMBRE.Contains(id)).ToList();
+            return _db.ObtenerTodo(id).ToList();
         }
     }
 }
