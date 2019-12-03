@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\ClienteC.cs" />
+    <Compile Include="Controlador\LoginCache.cs" />
     <Compile Include="Controlador\UsuarioC.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>

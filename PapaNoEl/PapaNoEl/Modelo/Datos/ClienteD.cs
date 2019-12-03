@@ -29,7 +29,7 @@ namespace PapaNoEl.Modelo.Datos
             parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@nombre", entidad.nombre));
             parametros.Add(new SqlParameter("@apellido", entidad.apellido));
-            parametros.Add(new SqlParameter("@ci", entidad.));
+            parametros.Add(new SqlParameter("@ci", entidad.ci));
             parametros.Add(new SqlParameter("@tipoempresa", entidad.tipoempresa));
             return EjectuarNonQuery(insertar);
         }
@@ -39,7 +39,7 @@ namespace PapaNoEl.Modelo.Datos
             parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@nombre", entidad.nombre));
             parametros.Add(new SqlParameter("@apellido", entidad.apellido));
-            parametros.Add(new SqlParameter("@ci", entidad.));
+            parametros.Add(new SqlParameter("@ci", entidad.ci));
             parametros.Add(new SqlParameter("@tipoempresa", entidad.tipoempresa));
             return EjectuarNonQuery(actualizar);
         }

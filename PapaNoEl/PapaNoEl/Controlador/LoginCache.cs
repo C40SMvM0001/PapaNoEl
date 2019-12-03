@@ -11,7 +11,7 @@ namespace PapaNoEl.Controlador
         public static string cuenta { get; set; }
         public static string clave { get; set; }
         public static string nombre { get; set; }
-        public static string apellido { get; set; }             
+        public static string apellido { get; set; }
         public static string rol { get; set; }
     }
 }
