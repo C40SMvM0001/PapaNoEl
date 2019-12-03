@@ -1,4 +1,5 @@
-﻿using PapaNoEl.Vista.frmBase;
+﻿using PapaNoEl.Controlador;
+using PapaNoEl.Vista.frmBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace PapaNoEl
 {
     public partial class frmLogin : frmVentana
     {
+
+        UsuarioC _usuarioC = new UsuarioC();
         public frmLogin()
         {
             InitializeComponent();
@@ -20,9 +23,18 @@ namespace PapaNoEl
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            frmPrincipal fm = new frmPrincipal();
-            fm.Show();
+            int tipo = _usuarioC.Login(txtUsuario.Text, txtContrasenia.Text);
+
+            //if (true)
+            if(tipo >= 0)
+            {
+                this.Visible = false;
+                frmPrincipal fm = new frmPrincipal();
+                fm.Show();
+            }
+            else
+                MessageBox.Show("Datos Incorrectos");
+            
         }
 
         private void BrnCancelar_Click(object sender, EventArgs e)
