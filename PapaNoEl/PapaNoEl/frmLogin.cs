@@ -25,7 +25,8 @@ namespace PapaNoEl
         {
             int tipo = _usuarioC.Login(txtUsuario.Text, txtContrasenia.Text);
 
-            if (true)//tipo >= 0)
+            //if (true)
+            if(tipo >= 0)
             {
                 this.Visible = false;
                 frmPrincipal fm = new frmPrincipal();
