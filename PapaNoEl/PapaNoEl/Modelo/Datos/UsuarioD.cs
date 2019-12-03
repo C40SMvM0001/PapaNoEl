@@ -13,6 +13,7 @@ namespace PapaNoEl.Modelo.Datos
     public class UsuarioD:Query
     {
         private string seleccionarTodo;
+        private string seleccionarTodoFiltro;
         private string insertar;
         private string actualizar;
         private string eliminar;
@@ -25,6 +26,7 @@ namespace PapaNoEl.Modelo.Datos
             actualizar = "update Usuarios set Cuenta=@cuenta,Clave=@clave,Nombre=@nombre,Apellido=@apellido,Rol=@rol where Cuenta=@cuenta";
             eliminar = "delete from Usuarios where Cuenta=@cuenta";
             buscarCuenta = "select * from Usuarios where Cuenta=@cuenta and Clave=@clave";
+            seleccionarTodoFiltro = "select * from Usuarios where Cuenta like @clave +'%' ";
         }
 
         public int Adicionar(Usuario entidad)
@@ -68,6 +70,27 @@ namespace PapaNoEl.Modelo.Datos
                     clave = item[1].ToString(),
                     nombre = item[2].ToString(),
                     apellido = item[3].ToString(),                                        
+                    rol = item[4].ToString()
+                });
+            }
+            return listaUsuarios;
+        }
+
+        public List<Usuario> ObtenerTodo(string clave)
+        {
+            parametros = new List<SqlParameter>();            
+            parametros.Add(new SqlParameter("@clave", clave));
+
+            var tabla = EjecutarLecturaParametros(seleccionarTodoFiltro);
+            var listaUsuarios = new List<Usuario>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                listaUsuarios.Add(new Usuario
+                {
+                    cuenta = item[0].ToString(),
+                    clave = item[1].ToString(),
+                    nombre = item[2].ToString(),
+                    apellido = item[3].ToString(),
                     rol = item[4].ToString()
                 });
             }

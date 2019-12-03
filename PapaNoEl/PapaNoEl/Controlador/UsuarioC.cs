@@ -68,11 +68,11 @@ namespace PapaNoEl.Controlador
             return _db.ObtenerTodo().ToList();
         }
 
-        /*public List<Usuario> MostrarDatos(string id)
+        public List<Usuario> MostrarDatos(string id)
         {
             //return _db.Usuarios.Where(x => x.NOMBRE.Contains(id)).ToList();
-             return _db.Obtener(id).ToList();
-        }*/
+             return _db.ObtenerTodo(id).ToList();
+        }
 
         public int Login(string cuenta, string clave)
         {

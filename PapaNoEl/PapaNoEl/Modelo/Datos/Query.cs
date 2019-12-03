@@ -69,8 +69,8 @@ namespace PapaNoEl.Modelo.Datos
                         comando.Parameters.Add(item);
                     }
                     SqlDataReader reader = comando.ExecuteReader();
-                    int resultado = comando.ExecuteNonQuery();                    
-                    
+                    //int resultado = comando.ExecuteNonQuery();
+
                     parametros.Clear();
 
                     using (var tabla = new DataTable())
@@ -78,6 +78,7 @@ namespace PapaNoEl.Modelo.Datos
                         tabla.Load(reader);
                         reader.Dispose();
                         return tabla;
+                        
                     }
                     
                 }
