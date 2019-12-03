@@ -59,6 +59,7 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -380,7 +381,8 @@
             this.Producto,
             this.Precio,
             this.Cantidad,
-            this.SubTotal});
+            this.SubTotal,
+            this.s});
             this.dgvVenta.Location = new System.Drawing.Point(73, 181);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.Size = new System.Drawing.Size(667, 184);
@@ -410,6 +412,11 @@
             // 
             this.SubTotal.HeaderText = "SubTotal";
             this.SubTotal.Name = "SubTotal";
+            // 
+            // s
+            // 
+            this.s.HeaderText = "s";
+            this.s.Name = "s";
             // 
             // lblUsuario
             // 
@@ -449,6 +456,7 @@
             // 
             // cmbTipoEmpresa
             // 
+            this.cmbTipoEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbTipoEmpresa.FormattingEnabled = true;
             this.cmbTipoEmpresa.Items.AddRange(new object[] {
             "Privada",
@@ -565,12 +573,13 @@
         private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmbTipoEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cmbTipoEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn s;
     }
 }

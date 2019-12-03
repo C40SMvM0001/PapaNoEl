@@ -118,16 +118,25 @@ namespace PapaNoEl.Vista.frmVentanas
             //detalle
             foreach (DataGridViewRow row in dgvVenta.Rows)
             {
-                Detalle detalle = new Detalle
+                try
                 {
-                    idProducto = Convert.ToInt32(row.Cells[0].Value.ToString()),
-                    cantidad = Convert.ToDecimal(row.Cells[3].Value.ToString()),
-                    subtotal = Convert.ToDecimal(row.Cells[4].Value.ToString()),
-                    idVenta = Convert.ToInt32(lblVenta.Text)
-                };
+                    Detalle detalle = new Detalle
+                    {
+                        idProducto = Convert.ToInt32(row.Cells[0].Value.ToString()),
+                        cantidad = Convert.ToDecimal(row.Cells[3].Value.ToString()),
+                        subtotal = Convert.ToDecimal(row.Cells[4].Value.ToString()),
+                        idVenta = Convert.ToInt32(lblVenta.Text)
+                    };
+                    _detalleC.GuardarCambios(detalle);
+                }
+                catch (Exception ex)
+                {
+                    
+                }
                 //
-                _detalleC.GuardarCambios(detalle);                
+                             
             }
+            MessageBox.Show("detaale");
         }
     }
 }
