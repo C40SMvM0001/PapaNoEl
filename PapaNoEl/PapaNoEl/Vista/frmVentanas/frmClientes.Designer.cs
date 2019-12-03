@@ -83,6 +83,7 @@
             // 
             // cmbTipoEmpresa
             // 
+            this.cmbTipoEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoEmpresa.FormattingEnabled = true;
             this.cmbTipoEmpresa.Items.AddRange(new object[] {
             "Privada",

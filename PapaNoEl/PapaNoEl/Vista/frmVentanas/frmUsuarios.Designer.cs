@@ -150,6 +150,7 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Items.AddRange(new object[] {
             "Gerente",

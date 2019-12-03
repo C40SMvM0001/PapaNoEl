@@ -83,6 +83,7 @@
             // 
             // cmbTipo
             // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Items.AddRange(new object[] {
             "Tarjeta Digital",

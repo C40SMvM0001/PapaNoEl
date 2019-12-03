@@ -457,6 +457,7 @@
             // cmbTipoEmpresa
             // 
             this.cmbTipoEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbTipoEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoEmpresa.FormattingEnabled = true;
             this.cmbTipoEmpresa.Items.AddRange(new object[] {
             "Privada",
