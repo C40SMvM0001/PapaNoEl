@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PapaNoEl.Vista.frmBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PapaNoEl.Vista.frmVentanas
 {
-    public partial class frmClientes : Form
+    public partial class frmClientes : frmGestionar
     {
         public frmClientes()
         {

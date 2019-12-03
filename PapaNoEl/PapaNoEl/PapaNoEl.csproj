@@ -65,6 +65,12 @@
     <Compile Include="Vista\frmBase\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmBase\frmTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBase\frmTitulo.Designer.cs">
+      <DependentUpon>frmTitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmBase\frmVentana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,8 +125,26 @@
     <EmbeddedResource Include="Vista\frmBase\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmBase\frmTitulo.resx">
+      <DependentUpon>frmTitulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmBase\frmVentana.resx">
       <DependentUpon>frmVentana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentanas\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentanas\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentanas\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentanas\frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmVentanas\frnReportes.resx">
+      <DependentUpon>frnReportes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

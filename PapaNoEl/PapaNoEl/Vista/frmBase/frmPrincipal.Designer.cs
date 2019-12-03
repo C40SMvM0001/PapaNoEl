@@ -46,13 +46,9 @@
             this.label2.Size = new System.Drawing.Size(147, 25);
             this.label2.Text = "PAPA NO EL";
             // 
-            // label1
-            // 
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel2_MouseDown);
             // 
             // panel1
             // 
@@ -87,6 +83,7 @@
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // btnReportes
             // 
@@ -204,6 +201,7 @@
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

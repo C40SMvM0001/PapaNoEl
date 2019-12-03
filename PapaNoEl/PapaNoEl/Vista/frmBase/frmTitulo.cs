@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PapaNoEl.Vista.frmBase
 {
-    public partial class frmVentana : Form
+    public partial class frmTitulo : Form
     {
-        public frmVentana()
+        public frmTitulo()
         {
             InitializeComponent();
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
