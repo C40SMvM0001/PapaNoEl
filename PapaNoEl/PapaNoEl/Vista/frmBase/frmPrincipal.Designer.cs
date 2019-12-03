@@ -102,6 +102,7 @@
             this.btnReportes.TabIndex = 7;
             this.btnReportes.Text = "REPORTES";
             this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // btnVentas
             // 
@@ -120,6 +121,7 @@
             this.btnVentas.TabIndex = 6;
             this.btnVentas.Text = "VENTAS";
             this.btnVentas.UseVisualStyleBackColor = false;
+            this.btnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // btnProductos
             // 
@@ -138,6 +140,7 @@
             this.btnProductos.TabIndex = 5;
             this.btnProductos.Text = "PRODUCTOS";
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.BtnProductos_Click);
             // 
             // btnClientes
             // 
@@ -156,6 +159,7 @@
             this.btnClientes.TabIndex = 4;
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
             // btnUsuarios
             // 
@@ -174,6 +178,7 @@
             this.btnUsuarios.TabIndex = 3;
             this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // panel3
             // 

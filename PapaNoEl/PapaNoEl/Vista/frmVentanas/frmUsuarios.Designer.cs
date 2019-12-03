@@ -30,6 +30,12 @@
         {
             this.SuspendLayout();
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(286, 5);
+            this.label2.Size = new System.Drawing.Size(159, 32);
+            this.label2.Text = "USUARIOS";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;

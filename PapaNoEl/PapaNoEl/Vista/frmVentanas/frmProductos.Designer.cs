@@ -30,6 +30,12 @@
         {
             this.SuspendLayout();
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(273, 5);
+            this.label2.Size = new System.Drawing.Size(191, 32);
+            this.label2.Text = "PRODUCTOS";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;

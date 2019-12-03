@@ -30,6 +30,12 @@
         {
             this.SuspendLayout();
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(287, 5);
+            this.label2.Size = new System.Drawing.Size(152, 32);
+            this.label2.Text = "CLIENTES";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
