@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PapaNoEl.Vista.frmBase
 {
-    public partial class frmPrincipal : Form
+    public partial class frmPrincipal : frmVentana
     {
         public frmPrincipal()
         {
