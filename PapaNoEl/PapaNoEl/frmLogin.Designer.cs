@@ -46,7 +46,7 @@
             // 
             // panel2
             // 
-            this.panel2.Size = new System.Drawing.Size(401, 54);
+            this.panel2.Size = new System.Drawing.Size(400, 54);
             // 
             // panel1
             // 
@@ -145,6 +145,7 @@
             this.btnIngresar.TabIndex = 18;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
             // frmLogin
             // 
@@ -160,6 +161,7 @@
             this.Controls.Add(this.brnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.btnIngresar, 0);

@@ -17,5 +17,12 @@ namespace PapaNoEl
         {
             InitializeComponent();
         }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            frmPrincipal fm = new frmPrincipal();
+            fm.Show();
+        }
     }
 }
